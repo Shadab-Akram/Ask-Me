@@ -1,3 +1,21 @@
+/* App.css */
+:root {
+  --background-color: #ffffff; /* Light mode background color */
+  --text-color: #333333; /* Light mode text color */
+}
+
+.dark-mode {
+  --background-color: #333333; /* Dark mode background color */
+  --text-color: #ffffff; /* Dark mode text color */
+}
+
+/* Other CSS rules using CSS variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
 .home-container-1 {
   min-height: 100vh;
   max-width: 1250px;

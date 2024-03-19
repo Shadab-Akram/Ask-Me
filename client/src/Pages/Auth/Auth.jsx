@@ -68,6 +68,7 @@ const Auth = () => {
           )}
           <label htmlFor="email">
             <h4>Email</h4>
+            <br/>
             <input
               type="email"
               name="email"

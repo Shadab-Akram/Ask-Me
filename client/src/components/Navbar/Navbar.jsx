@@ -5,6 +5,7 @@ import decode from "jwt-decode";
 
 import logo from "../../assets/logo.png";
 // import search from "../../assets/search-solid.svg";
+// import ThemeToggle from "../ThemeToggle";
 import Avatar from "../../components/Avatar/Avatar";
 import "./Navbar.css";
 import { setCurrentUser } from "../../actions/currentUser";
@@ -56,6 +57,7 @@ const Navbar = ({ handleSlideIn }) => {
             <img src={search} alt="search" width="18" className="search-icon" />
           </form> */}
         </div>
+        {/* <ThemeToggle /> */}
         <div className="navbar-2">
           {User === null ? (
             <Link to="/Auth" className="nav-item nav-links">
