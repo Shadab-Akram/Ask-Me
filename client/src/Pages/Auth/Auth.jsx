@@ -6,11 +6,16 @@ import "./Auth.css";
 import icon from "../../assets/icon.png";
 import AboutAuth from "./AboutAuth";
 import { signup, login } from "../../actions/auth";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Auth = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,16 +30,20 @@ const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email && !password) {
-      alert("Enter email and password");
+      toast.warning("Enter email and password");
     }
     if (isSignup) {
       if (!name) {
-        alert("Enter a name to continue");
+        toast.warning("Enter a name to continue");
       }
       dispatch(signup({ name, email, password }, navigate));
     } else {
       dispatch(login({ email, password }, navigate));
     }
+  };
+
+  const handlePasswordToggle = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -72,14 +81,12 @@ const Auth = () => {
           <label htmlFor="password">
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h4>Password</h4>
-              {!isSignup && (
-                <p style={{ color: "#007ac6", fontSize: "13px" }}>
-                  forgot password?
-                </p>
-              )}
+              <p onClick={handlePasswordToggle} className="show-hide">
+                {showPassword ? "Hide" : "Show"}
+              </p>
             </div>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               value={password}
@@ -88,6 +95,9 @@ const Auth = () => {
               }}
             />
           </label>
+            <p className="forgot-password">
+              forgot password?
+            </p>
           <button type="submit" className="auth-btn">
             {isSignup ? "Sign up" : "Log in"}
           </button>
