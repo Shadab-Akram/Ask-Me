@@ -21,7 +21,7 @@ app.use("/answer", answerRoutes);
 
 // Define a catch-all route handler for the root URL ("/")
 app.get('/',(req, res) => {
-    res.send("This is a stack overflow clone API");
+    res.send("This is an Ask Me API");
 });
 
 const PORT = process.env.PORT || 5000;
