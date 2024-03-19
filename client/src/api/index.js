@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: 'https://ask-me-kappa.vercel.app/'})
+const API = axios.create({ baseURL: 'https://ask-me-kappa.vercel.app'})
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("Profile")) {
