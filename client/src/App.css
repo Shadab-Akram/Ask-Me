@@ -1,19 +1,17 @@
-/* App.css */
-:root {
-  --background-color: #ffffff; /* Light mode background color */
-  --text-color: #333333; /* Light mode text color */
+/* :root {
+  --background-color: #ffffff;
+  --text-color: #333333;
 }
 
 .dark-mode {
-  --background-color: #333333; /* Dark mode background color */
-  --text-color: #ffffff; /* Dark mode text color */
+  --background-color: #333333;
+  --text-color: #ffffff;
 }
 
-/* Other CSS rules using CSS variables */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-}
+} */
 
 
 .home-container-1 {

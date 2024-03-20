@@ -8,8 +8,6 @@ import { askQuestion } from "../../actions/question";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import EditorToolbar from "../Toolbar/EditorToolbar";
-
 const AskQuestion = () => {
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionBody, setQuestionBody] = useState("");
@@ -112,7 +110,16 @@ const AskQuestion = () => {
                 Include all the information someone would need to answer your
                 question
               </p>
-              <EditorToolbar value={questionBody} onChange={setQuestionBody} />
+              <textarea
+                name=""
+                id="ask-ques-body"
+                onChange={(e) => {
+                  setQuestionBody(e.target.value);
+                }}
+                cols="30"
+                rows="10"
+                onKeyPress={handleEnter}
+              ></textarea>
             </label>
             <br />
             <label htmlFor="ask-ques-tags">
